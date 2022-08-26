@@ -22,3 +22,9 @@ export interface IMovie {
 export type MovieProp = {
 	movie?: IMovie;
 };
+
+export interface IDiscoverMovie {
+	page?: number | string;
+	results?: IMovie[];
+	total_pages?: number | undefined;
+}

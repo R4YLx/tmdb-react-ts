@@ -1,10 +1,10 @@
-import { IData } from "./../interfaces/IData";
 import axios from "axios";
 
 //* Interfaces and type
 import { IGenres } from "./../interfaces/IGenres";
 import { IMovie } from "../interfaces/IMovie";
 import { IPerson } from "./../interfaces/IPerson";
+import { IDiscoverMovie } from "./../interfaces/IMovie";
 
 //* Defaults and variables
 axios.defaults.baseURL = "https://api.themoviedb.org/3";
@@ -17,11 +17,11 @@ const creditsAndSimilar: string = "&append_to_response=credits,similar";
  *
  */
 const discoverMovies = async (
-	page: number | string,
-	genre_id?: number,
-	person_id?: number,
-	sort?: string
-): Promise<IMovie[]> => {
+	sort?: string,
+	page?: number | string,
+	genre_id?: number | string,
+	person_id?: number
+): Promise<IDiscoverMovie> => {
 	const res = await axios.get(
 		`discover/movie?api_key=${API_KEY}&language=en-US&${sort}${adultCont}&page=${page}&with_genres=${genre_id}&with_cast=${person_id}`
 	);

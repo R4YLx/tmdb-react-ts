@@ -4,14 +4,17 @@ import { PersonProp } from "../../interfaces/IPerson";
 
 import { Card } from "flowbite-react";
 import ButtonComp from "../partials/ButtonComp";
+import PersonMovieList from "./PersonMovieList";
 
 import placeholder from "../../assets/person_placeholder.png";
 
 const PersonDetails = ({ person }: PersonProp) => {
+	// image URL
 	const imgUrl = "https://image.tmdb.org/t/p/original";
 
 	const navigate = useNavigate();
 
+	// Handle previous page
 	const onPrevious = () => {
 		navigate(-1);
 	};
@@ -101,7 +104,7 @@ const PersonDetails = ({ person }: PersonProp) => {
 				</div>
 			)}
 
-			{/* <ActorMoviesList id={person?.id} /> */}
+			<PersonMovieList id={person?.id} />
 
 			{/* Previous button */}
 			<ButtonComp string={"Back"} onPrevious={onPrevious} />
