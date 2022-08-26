@@ -100,7 +100,7 @@ const getTopRatedMovies = async (page: number | string): Promise<IMovie[]> => {
 		`/movie/top_rated?api_key=${API_KEY}&language=en-US&region=US&page=${page}${adultCont}`
 	);
 
-	return res.data;
+	return res.data.results;
 };
 
 /**

@@ -6,7 +6,7 @@ import Navigation from "./components/partials/Navigation";
 
 import HomePage from "./pages/HomePage";
 import NowPlayingPage from "./pages/NowPlayingPage";
-import TopRatedPage from "./pages/TopRatedpage";
+import TopRatedPage from "./pages/TopRatedPage";
 
 import MoviePage from "./pages/MoviePage";
 import PersonPage from "./pages/PersonPage";
