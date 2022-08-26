@@ -45,12 +45,14 @@ const getGenresList = async (): Promise<IGenres[]> => {
  * Get now playing movies
  *
  */
-const getNowPlayingMovies = async (page: number | string): Promise<IData> => {
+const getNowPlayingMovies = async (
+	page: number | string
+): Promise<IMovie[]> => {
 	const res = await axios.get(
 		`/movie/now_playing?api_key=${API_KEY}&language=en-US&region=US&page=${page}${adultCont}`
 	);
 
-	return res.data;
+	return res.data.results;
 };
 
 /**
