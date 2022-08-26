@@ -6,6 +6,7 @@ import Navigation from "./components/partials/Navigation";
 
 import HomePage from "./pages/HomePage";
 import NowPlayingPage from "./pages/NowPlayingPage";
+import MoviePage from "./pages/MoviePage";
 
 import FooterComp from "./components/partials/FooterComp";
 
@@ -17,6 +18,7 @@ function App() {
 			<Routes>
 				<Route path="/" element={<HomePage />} />
 				<Route path="/now-playing" element={<NowPlayingPage />} />
+				<Route path="/movie/:id" element={<MoviePage />} />
 			</Routes>
 
 			<FooterComp className="row-end-3" />

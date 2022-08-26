@@ -1,5 +1,5 @@
 type VotesAndRatingProps = {
-	rating?: number;
+	rating?: number | string;
 	votes?: number;
 };
 
