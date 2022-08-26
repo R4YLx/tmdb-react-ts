@@ -21,8 +21,6 @@ const PersonMovieList = ({ id }: { id?: number }) => {
 		id
 	);
 
-	console.log("Related movies", relatedMovies);
-
 	return (
 		<>
 			{isSuccess && relatedMovies && (

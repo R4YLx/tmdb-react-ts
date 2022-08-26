@@ -1,3 +1,4 @@
+import { IDiscoverMovie } from "./../interfaces/IMovie";
 import { useQuery } from "@tanstack/react-query";
 import TMDB from "../services/TMDBAPI";
 
@@ -7,7 +8,7 @@ const useDiscoverMovies = (
 	genre_id?: number | string,
 	page?: number
 ) => {
-	return useQuery(
+	return useQuery<IDiscoverMovie>(
 		["related-movies", sort, id, genre_id, page],
 		() => TMDB.discoverMovies(sort, id, genre_id, page),
 		{ keepPreviousData: true }
