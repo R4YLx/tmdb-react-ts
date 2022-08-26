@@ -1,12 +1,16 @@
 import { useSearchParams } from "react-router-dom";
+
+import useDiscoverMovies from "../hooks/useDiscoverMovies";
+import useGenresList from "../hooks/useGenresList";
+
+import { IGenres } from "../interfaces/IGenres";
+import { IMovie } from "../interfaces/IMovie";
+
 import ErrorAlert from "../components/alerts/ErrorAlert";
 import MovieCard from "../components/movie/MovieCard";
 import DropdownList from "../components/partials/DropDownList";
 import LoadingSpinner from "../components/partials/LoadingSpinner";
 import PaginationComp from "../components/partials/PaginationComp";
-import useDiscoverMovies from "../hooks/useDiscoverMovies";
-import useGenresList from "../hooks/useGenresList";
-import { IMovie } from "../interfaces/IMovie";
 
 const PopularPage = () => {
 	// Setting current genre
@@ -42,7 +46,11 @@ const PopularPage = () => {
 		});
 	};
 
-	// console.log(movies);
+	genresData?.find((genre: IGenres) => {
+		if (genre.id === Number(genre_id)) {
+			currentGenre = `- ${genre.name}`;
+		}
+	});
 
 	return (
 		<>

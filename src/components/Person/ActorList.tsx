@@ -1,7 +1,5 @@
 import { Link } from "react-router-dom";
-
 import { IPerson, PersonProp } from "../../interfaces/IPerson";
-
 import placeholder from "../../assets/person_placeholder.png";
 
 const ActorList = ({ cast }: PersonProp) => {

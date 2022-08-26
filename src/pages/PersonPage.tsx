@@ -1,8 +1,9 @@
 import { useParams } from "react-router-dom";
+import usePerson from "../hooks/usePerson";
+
 import ErrorAlert from "../components/alerts/ErrorAlert";
 import LoadingSpinner from "../components/partials/LoadingSpinner";
 import PersonDetails from "../components/person/PersonDetails";
-import usePerson from "../hooks/usePerson";
 
 const PersonPage = () => {
 	const { id } = useParams();
