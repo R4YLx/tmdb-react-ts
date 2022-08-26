@@ -14,6 +14,9 @@ export interface IMovie {
 	poster_path?: string | null;
 	revenue?: number;
 	release_date?: string;
+	similar?: {
+		results?: IMovie[];
+	};
 	title?: string;
 	vote_count?: number;
 	vote_average?: number;
