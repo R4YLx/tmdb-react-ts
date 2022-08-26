@@ -30,23 +30,20 @@ const Navigation = () => {
 
 				{/* Playing */}
 				<Navbar.Link
-					href="/now-playing-movies"
+					href="/now-playing"
 					active={location.pathname === "/now-playing"}
 				>
 					<span className="text-base">Now Playing</span>
 				</Navbar.Link>
 
 				{/* Popular */}
-				<Navbar.Link
-					href="/popular-movies"
-					active={location.pathname === "/popular"}
-				>
+				<Navbar.Link href="/popular" active={location.pathname === "/popular"}>
 					<span className="text-base">Popular Movies</span>
 				</Navbar.Link>
 
 				{/* Top Rated */}
 				<Navbar.Link
-					href="/top-rated-movies"
+					href="/top-rated"
 					active={location.pathname === "/top-rated"}
 				>
 					<span className="text-base">Top Rated Movies</span>
