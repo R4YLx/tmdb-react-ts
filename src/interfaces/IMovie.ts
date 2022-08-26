@@ -21,6 +21,7 @@ export interface IMovie {
 
 export type MovieProp = {
 	movie?: IMovie;
+	movies?: IMovie[];
 };
 
 export interface IDiscoverMovie {

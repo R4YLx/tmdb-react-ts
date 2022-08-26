@@ -18,4 +18,5 @@ export interface IPerson {
 export type PersonProp = {
 	cast?: IPerson[];
 	person?: IPerson;
+	people?: IPerson[];
 };
