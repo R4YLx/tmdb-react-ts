@@ -4,12 +4,12 @@ import TMDB from "../services/TMDBAPI";
 
 const useDiscoverMovies = (
 	sort?: string,
-	id?: number,
-	genre_id?: number | string,
-	page?: number
+	id?: number | string,
+	genre_id?: string,
+	page?: string | number
 ) => {
 	return useQuery<IDiscoverMovie>(
-		["related-movies", sort, id, genre_id, page],
+		["discover-movies", sort, id, genre_id, page],
 		() => TMDB.discoverMovies(sort, id, genre_id, page),
 		{ keepPreviousData: true }
 	);

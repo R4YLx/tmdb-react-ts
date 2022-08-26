@@ -1,5 +1,5 @@
 type PaginationProps = {
-	page?: string | number | null;
+	page?: string | number;
 	turnPage?: any;
 	genre_id?: number;
 	query?: string;

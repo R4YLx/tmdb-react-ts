@@ -37,8 +37,7 @@ const getGenresList = async (): Promise<IGenres[]> => {
 	const res = await axios.get(
 		`genre/movie/list?api_key=${API_KEY}&language=en-US`
 	);
-
-	return res.data;
+	return res.data.genres;
 };
 
 /**
