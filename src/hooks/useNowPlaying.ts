@@ -3,9 +3,9 @@ import { useQuery } from "@tanstack/react-query";
 
 import TMDBAPI from "../services/TMDBAPI";
 
-const useNowPlaying = (page: string) => {
+const useNowPlaying = (page: string | number | null) => {
 	return useQuery<IMovie[]>(["now-playing", page], () =>
-		TMDBAPI.getNowPlayingMovies(page)
+		TMDBAPI.getNowPlayingMovies(page!)
 	);
 };
 

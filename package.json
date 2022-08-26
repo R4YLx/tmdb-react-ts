@@ -10,6 +10,7 @@
 	},
 	"dependencies": {
 		"@tanstack/react-query": "^4.2.1",
+		"@types/react-router-dom": "^5.3.3",
 		"axios": "^0.27.2",
 		"daisyui": "^2.24.0",
 		"flowbite": "^1.5.2",
