@@ -6,7 +6,7 @@ const HomePage = () => {
 	const [time, setTime] = useState<string>("week");
 
 	// Data via useQuery
-	const { data } = useTrending(time);
+	const { data: trending, isSuccess: trendingSuccess } = useTrending(time);
 
 	return <div>HomePage</div>;
 };
