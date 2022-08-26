@@ -43,7 +43,7 @@ const NowPlayingPage = () => {
 
 						{/* Top pagination visible on medium screens */}
 						<div className="hidden md:block col-start-2 col-end-3 justify-self-center">
-							<PaginationComp page={page} turnPage={setSearchParams} />
+							<PaginationComp page={Number(page)} turnPage={setSearchParams} />
 						</div>
 					</div>
 
@@ -57,7 +57,7 @@ const NowPlayingPage = () => {
 
 					{/* Pagination */}
 					<div className="flex justify-center md:pb-4">
-						<PaginationComp page={page} turnPage={setSearchParams} />
+						<PaginationComp page={Number(page)} turnPage={setSearchParams} />
 					</div>
 				</>
 			)}
