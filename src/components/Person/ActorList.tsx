@@ -40,7 +40,7 @@ const ActorList = ({ cast }: PersonProp) => {
 
 											{/* Actor name */}
 											<Link
-												to={`/actor/${actor?.id}`}
+												to={`/person/${actor?.id}`}
 												className="cursor-pointer hover:underline"
 											>
 												<p className="font-bold text-sm cursor-pointer">
@@ -56,7 +56,7 @@ const ActorList = ({ cast }: PersonProp) => {
 
 								{/* Button for more details about actor */}
 								<th className="hidden md:table-cell">
-									<Link to={`/actor/${actor?.id}`} className="cursor-pointer">
+									<Link to={`/person/${actor?.id}`} className="cursor-pointer">
 										<button className="btn btn-ghost btn-xs">details</button>
 									</Link>
 								</th>

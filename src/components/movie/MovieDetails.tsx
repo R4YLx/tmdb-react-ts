@@ -4,7 +4,7 @@ import { MovieProp } from "../../interfaces/IMovie";
 import { IGenres } from "../../interfaces/IGenres";
 
 import VotesAndRating from "../partials/VotesAndRating";
-import ActorList from "../Person/ActorList";
+import ActorList from "../person/ActorList";
 import ButtonComp from "../partials/ButtonComp";
 
 import placeholder from "../../assets/movie_placeholder.png";

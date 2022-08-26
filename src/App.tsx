@@ -9,6 +9,7 @@ import NowPlayingPage from "./pages/NowPlayingPage";
 import MoviePage from "./pages/MoviePage";
 
 import FooterComp from "./components/partials/FooterComp";
+import PersonPage from "./pages/PersonPage";
 
 function App() {
 	return (
@@ -19,6 +20,7 @@ function App() {
 				<Route path="/" element={<HomePage />} />
 				<Route path="/now-playing" element={<NowPlayingPage />} />
 				<Route path="/movie/:id" element={<MoviePage />} />
+				<Route path="/person/:id" element={<PersonPage />} />
 			</Routes>
 
 			<FooterComp className="row-end-3" />
