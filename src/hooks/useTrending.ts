@@ -3,7 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import TMDB from "../services/TMDBAPI";
 
 const useTrending = (time: string) => {
-	return useQuery<IMovie[]>(["trending"], () => TMDB.getTrending(time));
+	return useQuery<IMovie[]>(["trending", time], () => TMDB.getTrending(time));
 };
 
 export default useTrending;

@@ -75,7 +75,7 @@ const getPopularPeople = async (): Promise<IPerson[]> => {
 		`person/popular?api_key=${API_KEY}&language=en-US&page=1`
 	);
 
-	return res.data;
+	return res.data.results;
 };
 
 /**
@@ -123,7 +123,7 @@ export const getUpcomingMovies = async (): Promise<IMovie[]> => {
 		`movie/upcoming?api_key=${API_KEY}&language=en-US&page=1&region=us${adultCont}`
 	);
 
-	return res.data;
+	return res.data.results;
 };
 
 /**

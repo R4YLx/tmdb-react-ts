@@ -11,7 +11,7 @@ const CarouselPersonComp = ({ people }: PersonProp) => {
 				{people &&
 					people?.map((person: IPerson) => (
 						<figure key={person.id} className="carousel-item relative">
-							<Link to={`/actor/${person.id}`}>
+							<Link to={`/person/${person.id}`}>
 								<img
 									src={
 										person?.profile_path
