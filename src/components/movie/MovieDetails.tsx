@@ -1,10 +1,24 @@
+import { useNavigate } from "react-router-dom";
+
 import { MovieProp } from "../../interfaces/IMovie";
+import { IGenres } from "../../interfaces/IGenres";
+
 import VotesAndRating from "../partials/VotesAndRating";
+import ActorList from "../Person/ActorList";
+import ButtonComp from "../partials/ButtonComp";
 
 import placeholder from "../../assets/movie_placeholder.png";
 
 const MovieDetails = ({ movie }: MovieProp) => {
 	const imgUrl = "https://image.tmdb.org/t/p/original/";
+
+	const navigate = useNavigate();
+
+	const onPrevious = () => {
+		navigate(-1);
+	};
+
+	console.log(movie);
 
 	return (
 		<>
@@ -31,7 +45,7 @@ const MovieDetails = ({ movie }: MovieProp) => {
 							</h5>
 
 							{/* Back button */}
-							{/* <ButtonComponent string={"Back"} onPrevious={onPrevious} /> */}
+							<ButtonComp string={"Back"} onPrevious={onPrevious} />
 						</div>
 
 						{/* Rating and vote elements */}
@@ -46,18 +60,16 @@ const MovieDetails = ({ movie }: MovieProp) => {
 						<div className="divider m-1"></div>
 
 						{/* Genres */}
-						{/* <div>
-					<p className="font-medium text-white">Genres:</p>
-					<ul className="flex gap-4">
-						{movie?.genres.map(
-							(genre: { id: number; name: string }) => (
-								<li key={genre.id} className="text-sm ">
-									{genre.name}
-								</li>
-							)
-						)}
-					</ul>
-				</div> */}
+						<div>
+							<p className="font-medium text-white">Genres:</p>
+							<ul className="flex gap-4">
+								{movie?.genres?.map((genre: IGenres) => (
+									<li key={genre.id} className="text-sm ">
+										{genre.name}
+									</li>
+								))}
+							</ul>
+						</div>
 
 						{/* Divider */}
 						<div className="divider m-0"></div>
@@ -100,11 +112,11 @@ const MovieDetails = ({ movie }: MovieProp) => {
 
 						{/* Cast */}
 						<p className="font-medium text-white ">Cast:</p>
-						{/* <ActorList /> */}
+						<ActorList cast={movie?.credits?.cast} />
 
 						{/* Back button */}
 						<div className="flex justify-end">
-							{/* <ButtonComponent string={"Back"} onPrevious={onPrevious} /> */}
+							<ButtonComp string={"Back"} onPrevious={onPrevious} />
 						</div>
 					</div>
 				</div>

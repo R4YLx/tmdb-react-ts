@@ -12,3 +12,7 @@ export interface IPerson {
 		cast?: IMovie[];
 	};
 }
+
+export type PersonProp = {
+	cast?: IPerson[];
+};
