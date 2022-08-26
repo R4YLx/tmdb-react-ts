@@ -11,7 +11,7 @@ const useDiscoverMovies = (
 	return useQuery<IDiscoverMovie>(
 		["discover-movies", sort, id, genre_id, page],
 		() => TMDB.discoverMovies(sort, id, genre_id, page),
-		{ keepPreviousData: true }
+		{ keepPreviousData: genre_id ? false : true }
 	);
 };
 
