@@ -20,8 +20,6 @@ const HomePage = () => {
 	const { data: upcoming, isSuccess: upcomingSuccess } = useUpcoming();
 	const { data: people, isSuccess: peopleSuccess } = usePopularPeople();
 
-	console.log(trending);
-
 	return (
 		<div className="min-h-screen">
 			{/* Hero section */}

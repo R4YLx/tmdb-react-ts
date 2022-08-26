@@ -1,16 +1,14 @@
 import "./css/App.css";
-
 import { Route, Routes } from "react-router-dom";
 
 import Navigation from "./components/partials/Navigation";
-
 import HomePage from "./pages/HomePage";
 import NowPlayingPage from "./pages/NowPlayingPage";
 import PopularPage from "./pages/PopularPage";
 import TopRatedPage from "./pages/TopRatedPage";
 import MoviePage from "./pages/MoviePage";
 import PersonPage from "./pages/PersonPage";
-
+import PageNotFound from "./pages/PageNotFound";
 import FooterComp from "./components/partials/FooterComp";
 
 function App() {
@@ -26,6 +24,7 @@ function App() {
 
 				<Route path="/movie/:id" element={<MoviePage />} />
 				<Route path="/person/:id" element={<PersonPage />} />
+				<Route path="*" element={<PageNotFound />} />
 			</Routes>
 
 			<FooterComp className="row-end-3" />
