@@ -7,9 +7,10 @@ export interface IMovie {
 	credits?: {
 		cast?: IPerson[];
 	};
+	genres?: IGenres[];
 	genres_ids?: IGenres[];
 	id?: number;
-	overview?: string;
+	overview?: string | null;
 	poster_path?: string | null;
 	revenue?: number;
 	release_date?: string;
@@ -17,3 +18,7 @@ export interface IMovie {
 	vote_count?: number;
 	vote_average?: number;
 }
+
+export type MovieProp = {
+	movie?: IMovie;
+};
