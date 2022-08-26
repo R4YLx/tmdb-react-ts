@@ -18,8 +18,6 @@ const MovieDetails = ({ movie }: MovieProp) => {
 		navigate(-1);
 	};
 
-	console.log(movie);
-
 	return (
 		<>
 			{movie && (

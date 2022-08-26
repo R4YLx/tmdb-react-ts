@@ -31,7 +31,7 @@ const Navigation = () => {
 				{/* Playing */}
 				<Navbar.Link
 					href="/now-playing-movies"
-					active={location.pathname === "/now-playing-movies"}
+					active={location.pathname === "/now-playing"}
 				>
 					<span className="text-base">Now Playing</span>
 				</Navbar.Link>
@@ -39,7 +39,7 @@ const Navigation = () => {
 				{/* Popular */}
 				<Navbar.Link
 					href="/popular-movies"
-					active={location.pathname === "/popular-movies"}
+					active={location.pathname === "/popular"}
 				>
 					<span className="text-base">Popular Movies</span>
 				</Navbar.Link>
@@ -47,7 +47,7 @@ const Navigation = () => {
 				{/* Top Rated */}
 				<Navbar.Link
 					href="/top-rated-movies"
-					active={location.pathname === "/top-rated-movies"}
+					active={location.pathname === "/top-rated"}
 				>
 					<span className="text-base">Top Rated Movies</span>
 				</Navbar.Link>
