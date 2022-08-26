@@ -6,8 +6,8 @@ import Navigation from "./components/partials/Navigation";
 
 import HomePage from "./pages/HomePage";
 import NowPlayingPage from "./pages/NowPlayingPage";
+import PopularPage from "./pages/PopularPage";
 import TopRatedPage from "./pages/TopRatedPage";
-
 import MoviePage from "./pages/MoviePage";
 import PersonPage from "./pages/PersonPage";
 
@@ -21,6 +21,7 @@ function App() {
 			<Routes>
 				<Route path="/" element={<HomePage />} />
 				<Route path="/now-playing" element={<NowPlayingPage />} />
+				<Route path="/popular" element={<PopularPage />} />
 				<Route path="/top-rated" element={<TopRatedPage />} />
 
 				<Route path="/movie/:id" element={<MoviePage />} />
