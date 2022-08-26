@@ -111,7 +111,7 @@ const getTrending = async (time: string): Promise<IMovie[]> => {
 		`/trending/movie/${time}?api_key=${API_KEY}${adultCont}`
 	);
 
-	return res.data;
+	return res.data.results;
 };
 
 /**
