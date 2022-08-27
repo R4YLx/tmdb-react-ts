@@ -18,6 +18,8 @@ Build a website with React and using [The Movie DB](https://developers.themovied
 ## Assignment
 
 Build a app with the TMDB API and create a movie database with requirements specified below.
+The assignment is to be written in JS and JSX but I opted to write in TS and TSX to exentend my knowledge and pratice on TypesScript.
+
 User should be able to see:
 
 - 10-20 now playing movies
@@ -90,20 +92,20 @@ You may also see any lint errors in the console.
 
 #### Homepage
 
-<img src="https://github.com/R4YLx/tmdb-movie-database/blob/main/public/screens/scrn_1.png" width=100%>
+<img src="https://github.com/R4YLx/tmdb-react-ts/blob/main/public/screens/scrn_1.png" width=100%>
 
 #### Popular Movies
 
-<img src="https://github.com/R4YLx/tmdb-movie-database/blob/main/public/screens/scrn_2.png" width=100%>
+<img src="https://github.com/R4YLx/tmdb-react-ts/blob/main/public/screens/scrn_2.png" width=100%>
 
 #### Movie Details
 
-<img src="https://github.com/R4YLx/tmdb-movie-database/blob/main/public/screens/scrn_3.png" width=100%>
+<img src="https://github.com/R4YLx/tmdb-react-ts/blob/main/public/screens/scrn_3.png" width=100%>
 
 #### Actor Details
 
-<img src="https://github.com/R4YLx/tmdb-movie-database/blob/main/public/screens/scrn_4.png" width=100%>
+<img src="https://github.com/R4YLx/tmdb-react-ts/blob/main/public/screens/scrn_4.png" width=100%>
 
 #### Search Page
 
-<img src="https://github.com/R4YLx/tmdb-movie-database/blob/main/public/screens/scrn_5.png" width=100%>
+<img src="https://github.com/R4YLx/tmdb-react-ts/blob/main/public/screens/scrn_5.png" width=100%>
