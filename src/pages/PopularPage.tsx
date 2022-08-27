@@ -3,6 +3,7 @@ import { useSearchParams } from "react-router-dom";
 import useDiscoverMovies from "../hooks/useDiscoverMovies";
 import useGenresList from "../hooks/useGenresList";
 import { useLocalStorage } from "../contexts/LocalStorageContextProvider";
+import { StoreDataType } from "../contexts/types";
 
 import { IGenres } from "../interfaces/IGenres";
 import { IMovie } from "../interfaces/IMovie";
@@ -16,7 +17,7 @@ import RecentlyVisitedMovies from "../components/movie/RecentlyVisitedMovies";
 
 const PopularPage = () => {
 	//* Hook for getting local storage
-	const { visited } = useLocalStorage();
+	const { visited }: StoreDataType = useLocalStorage();
 
 	//* Setting current genre
 	let currentGenre = "";

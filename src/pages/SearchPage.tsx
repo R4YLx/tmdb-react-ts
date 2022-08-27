@@ -1,6 +1,7 @@
 import { useSearchParams } from "react-router-dom";
 import useSearch from "../hooks/useSearch";
 import { useLocalStorage } from "../contexts/LocalStorageContextProvider";
+import { StoreDataType } from "../contexts/types";
 import { IMovie } from "../interfaces/IMovie";
 
 import ErrorAlert from "../components/alerts/ErrorAlert";
@@ -13,7 +14,7 @@ import RecentlyVisitedMovies from "../components/movie/RecentlyVisitedMovies";
 
 const SearchPage = () => {
 	//* Hook for getting local storage
-	const { visited } = useLocalStorage();
+	const { visited }: StoreDataType = useLocalStorage();
 
 	//* Search params
 	const [searchParams, setSearchParams] = useSearchParams({

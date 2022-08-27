@@ -4,18 +4,19 @@ import { Link } from "react-router-dom";
 import usePopularPeople from "../hooks/usePopularPeople";
 import useTrending from "../hooks/useTrending";
 import useUpcoming from "../hooks/useUpcoming";
+import { useLocalStorage } from "../contexts/LocalStorageContextProvider";
+import { StoreDataType } from "../contexts/types";
 
 import { Dropdown } from "flowbite-react";
 import { DropdownItem } from "flowbite-react/lib/esm/components/Dropdown/DropdownItem";
 import CarouselMoviesComp from "../components/movie/CarouselMoviesComp";
 import CarouselPersonComp from "../components/person/CarouselPersonComp";
 import ButtonComp from "../components/partials/ButtonComp";
-import { useLocalStorage } from "../contexts/LocalStorageContextProvider";
 import RecentlyVisitedMovies from "../components/movie/RecentlyVisitedMovies";
 
 const HomePage = () => {
 	//* Hook for getting local storage
-	const { visited } = useLocalStorage();
+	const { visited }: StoreDataType = useLocalStorage();
 
 	//* State for api time window
 	const [time, setTime] = useState<string>("week");

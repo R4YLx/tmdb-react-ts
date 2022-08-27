@@ -2,6 +2,7 @@ import { useSearchParams } from "react-router-dom";
 import useNowPlaying from "../hooks/useNowPlaying";
 import { useLocalStorage } from "../contexts/LocalStorageContextProvider";
 import { IMovie } from "../interfaces/IMovie";
+import { StoreDataType } from "../contexts/types";
 
 import ErrorAlert from "../components/alerts/ErrorAlert";
 import MovieCard from "../components/movie/MovieCard";
@@ -11,7 +12,7 @@ import RecentlyVisitedMovies from "../components/movie/RecentlyVisitedMovies";
 
 const NowPlayingPage = () => {
 	//* Hook for getting local storage
-	const { visited } = useLocalStorage();
+	const { visited }: StoreDataType = useLocalStorage();
 
 	//* Search params
 	const [searchParams, setSearchParams] = useSearchParams({ page: "1" });

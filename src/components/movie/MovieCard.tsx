@@ -3,6 +3,7 @@ import { Button, Card } from "flowbite-react";
 
 import { useLocalStorage } from "../../contexts/LocalStorageContextProvider";
 import { MovieProp } from "../../interfaces/IMovie";
+import { StoreDataType } from "../../contexts/types";
 
 import placeholder from "../../assets/movie_placeholder.png";
 import VotesAndRating from "../partials/VotesAndRating";
@@ -12,7 +13,7 @@ const MovieCard = ({ movie }: MovieProp) => {
 	const imgUrl = "https://image.tmdb.org/t/p/w500";
 
 	//* Hook for setting to local storage
-	const { storeVisited } = useLocalStorage();
+	const { storeVisited }: StoreDataType = useLocalStorage();
 
 	return (
 		<Card

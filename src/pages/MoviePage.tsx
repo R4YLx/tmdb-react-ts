@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
-
 import { useLocalStorage } from "../contexts/LocalStorageContextProvider";
+import { StoreDataType } from "../contexts/types";
 import useMovie from "../hooks/useMovie";
 
 import MovieDetails from "../components/movie/MovieDetails";
@@ -14,7 +14,7 @@ const MoviePage = () => {
 	const { id }: { id?: string } = useParams();
 
 	//* Hook for getting local storage
-	const { visited } = useLocalStorage();
+	const { visited }: StoreDataType = useLocalStorage();
 
 	//* Data
 	const { data: movie, isLoading, isSuccess, isError, error } = useMovie(id);

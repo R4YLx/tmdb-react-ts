@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useLocalStorage } from "../contexts/LocalStorageContextProvider";
+import { StoreDataType } from "../contexts/types";
 import usePerson from "../hooks/usePerson";
 
 import ErrorAlert from "../components/alerts/ErrorAlert";
@@ -9,7 +10,7 @@ import RecentlyVisitedMovies from "../components/movie/RecentlyVisitedMovies";
 
 const PersonPage = () => {
 	//* Hook for getting local storage
-	const { visited } = useLocalStorage();
+	const { visited }: StoreDataType = useLocalStorage();
 
 	//* Id param
 	const { id } = useParams();
