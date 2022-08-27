@@ -1,3 +1,3 @@
-declare module "../person/ActorList";
-declare module "../components/person/CarouselPersonComp";
-declare module "../components/person/PersonDetails";
+declare module "ActorList.tsx";
+declare module "CarouselPersonComp.tsx";
+declare module "PersonDetails.tsx";
