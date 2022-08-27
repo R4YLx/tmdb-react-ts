@@ -10,8 +10,13 @@ import { DropdownItem } from "flowbite-react/lib/esm/components/Dropdown/Dropdow
 import CarouselMoviesComp from "../components/movie/CarouselMoviesComp";
 import CarouselPersonComp from "../components/person/CarouselPersonComp";
 import ButtonComp from "../components/partials/ButtonComp";
+import { useLocalStorage } from "../contexts/LocalStorageContextProvider";
+import RecentlyVisitedMovies from "../components/movie/RecentlyVisitedMovies";
 
 const HomePage = () => {
+	// Hook for getting local storage
+	const { visited } = useLocalStorage();
+
 	// State for api time window
 	const [time, setTime] = useState<string>("week");
 
@@ -113,6 +118,15 @@ const HomePage = () => {
 						{peopleSuccess && <CarouselPersonComp people={people} />}
 					</div>
 				</div>
+
+				{/* Recently viewed movies */}
+				{visited.length > 0 && (
+					<div className="flex justify-center flex-col items-center gap-4 w-11/12 md:w-4/5 2xl:w-4/6">
+						<div className="w-full">
+							<RecentlyVisitedMovies />
+						</div>
+					</div>
+				)}
 			</div>
 		</div>
 	);
