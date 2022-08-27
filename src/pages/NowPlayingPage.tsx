@@ -1,21 +1,25 @@
 import { useSearchParams } from "react-router-dom";
-
 import useNowPlaying from "../hooks/useNowPlaying";
-
+import { useLocalStorage } from "../contexts/LocalStorageContextProvider";
 import { IMovie } from "../interfaces/IMovie";
 
 import ErrorAlert from "../components/alerts/ErrorAlert";
 import MovieCard from "../components/movie/MovieCard";
 import LoadingSpinner from "../components/partials/LoadingSpinner";
 import PaginationComp from "../components/partials/PaginationComp";
+import RecentlyVisitedMovies from "../components/movie/RecentlyVisitedMovies";
 
 const NowPlayingPage = () => {
+	//* Hook for getting local storage
+	const { visited } = useLocalStorage();
+
+	//* Search params
 	const [searchParams, setSearchParams] = useSearchParams({ page: "1" });
 
-	// Keeping track of search query and page
+	//* Keeping track of search query and page
 	const page = searchParams.get("page");
 
-	// Data
+	//* Data
 	const {
 		data: movies,
 		isSuccess,
@@ -59,6 +63,13 @@ const NowPlayingPage = () => {
 					<div className="flex justify-center md:pb-4">
 						<PaginationComp page={Number(page)} turnPage={setSearchParams} />
 					</div>
+
+					{/* Recently viewed movies */}
+					{visited.length > 0 && (
+						<div className="grid grid-cols-1 items-center justify-center px-4 md:px-8">
+							<RecentlyVisitedMovies />
+						</div>
+					)}
 				</>
 			)}
 		</>

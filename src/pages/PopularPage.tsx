@@ -2,6 +2,7 @@ import { useSearchParams } from "react-router-dom";
 
 import useDiscoverMovies from "../hooks/useDiscoverMovies";
 import useGenresList from "../hooks/useGenresList";
+import { useLocalStorage } from "../contexts/LocalStorageContextProvider";
 
 import { IGenres } from "../interfaces/IGenres";
 import { IMovie } from "../interfaces/IMovie";
@@ -11,23 +12,27 @@ import MovieCard from "../components/movie/MovieCard";
 import DropdownList from "../components/partials/DropDownList";
 import LoadingSpinner from "../components/partials/LoadingSpinner";
 import PaginationComp from "../components/partials/PaginationComp";
+import RecentlyVisitedMovies from "../components/movie/RecentlyVisitedMovies";
 
 const PopularPage = () => {
-	// Setting current genre
+	//* Hook for getting local storage
+	const { visited } = useLocalStorage();
+
+	//* Setting current genre
 	let currentGenre = "";
 	const id = "";
 
-	// Search params
+	//* Search params
 	const [searchParams, setSearchParams] = useSearchParams({
 		page: "1",
 		genre_id: "",
 	});
 
-	// Keeping track of search query and page
+	//* Keeping track of search query and page
 	const page = searchParams.get("page") ?? "";
 	const genre_id = searchParams.get("genre_id") ?? "";
 
-	// Data via useQuery
+	//* Data via useQuery
 	const {
 		data: movies,
 		isSuccess,
@@ -36,9 +41,10 @@ const PopularPage = () => {
 		error,
 	} = useDiscoverMovies("sort_by=popularity.desc", page, genre_id, id);
 
+	//* Data of genres
 	const { data: genresData } = useGenresList();
 
-	// Function for reseting filter
+	//* Function for reseting filter
 	const resetGenreFilter = () => {
 		setSearchParams({
 			page: "1",
@@ -46,6 +52,7 @@ const PopularPage = () => {
 		});
 	};
 
+	//* looping to render current genre
 	genresData?.find((genre: IGenres) => {
 		if (genre.id === Number(genre_id)) {
 			currentGenre = `- ${genre.name}`;
@@ -103,6 +110,13 @@ const PopularPage = () => {
 							genre_id={Number(genre_id)}
 						/>
 					</div>
+
+					{/* Recently viewed movies */}
+					{visited.length > 0 && (
+						<div className="grid grid-cols-1 items-center justify-center px-4 md:px-8">
+							<RecentlyVisitedMovies />
+						</div>
+					)}
 				</>
 			)}
 		</>

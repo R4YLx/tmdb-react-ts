@@ -14,13 +14,13 @@ import { useLocalStorage } from "../contexts/LocalStorageContextProvider";
 import RecentlyVisitedMovies from "../components/movie/RecentlyVisitedMovies";
 
 const HomePage = () => {
-	// Hook for getting local storage
+	//* Hook for getting local storage
 	const { visited } = useLocalStorage();
 
-	// State for api time window
+	//* State for api time window
 	const [time, setTime] = useState<string>("week");
 
-	// Data via useQuery
+	//* Data via useQuery
 	const { data: trending, isSuccess: trendingSuccess } = useTrending(time);
 	const { data: upcoming, isSuccess: upcomingSuccess } = useUpcoming();
 	const { data: people, isSuccess: peopleSuccess } = usePopularPeople();
