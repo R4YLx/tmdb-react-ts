@@ -8,6 +8,7 @@ import PopularPage from "./pages/PopularPage";
 import TopRatedPage from "./pages/TopRatedPage";
 import MoviePage from "./pages/MoviePage";
 import PersonPage from "./pages/PersonPage";
+import SearchPage from "./pages/SearchPage";
 import PageNotFound from "./pages/PageNotFound";
 import FooterComp from "./components/partials/FooterComp";
 
@@ -21,6 +22,7 @@ function App() {
 				<Route path="/now-playing" element={<NowPlayingPage />} />
 				<Route path="/popular" element={<PopularPage />} />
 				<Route path="/top-rated" element={<TopRatedPage />} />
+				<Route path="/search" element={<SearchPage />} />
 
 				<Route path="/movie/:id" element={<MoviePage />} />
 				<Route path="/person/:id" element={<PersonPage />} />

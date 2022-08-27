@@ -1,4 +1,4 @@
-const ErrorAlert = (error: any) => {
+const ErrorAlert = ({ error }: { error: any }) => {
 	return (
 		<div className="py-16 w-4/5">
 			<div className="alert alert-error shadow-lg">
@@ -17,7 +17,7 @@ const ErrorAlert = (error: any) => {
 						/>
 					</svg>
 					<span>
-						{error?.response?.status} : {error?.response?.data?.status_message}
+						{error?.response?.status} : {error?.message}
 					</span>
 				</div>
 			</div>

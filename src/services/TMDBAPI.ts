@@ -5,6 +5,7 @@ import { IGenres } from "./../interfaces/IGenres";
 import { IMovie } from "../interfaces/IMovie";
 import { IPerson } from "./../interfaces/IPerson";
 import { IDiscoverMovie } from "./../interfaces/IMovie";
+import { IData } from "../interfaces/IData";
 
 //* Defaults and variables
 axios.defaults.baseURL = "https://api.themoviedb.org/3";
@@ -133,7 +134,9 @@ export const getUpcomingMovies = async (): Promise<IMovie[]> => {
 const searchQuery = async (
 	page: number | string,
 	query: string
-): Promise<IMovie[]> => {
+): Promise<IData> => {
+	// if (!!query) return;
+
 	const res = await axios.get(
 		`search/movie?api_key=${API_KEY}&query=${query}&page=${page}${adultCont}`
 	);
