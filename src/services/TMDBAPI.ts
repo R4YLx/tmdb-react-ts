@@ -21,7 +21,7 @@ const discoverMovies = async (
 	sort?: string,
 	page?: number | string,
 	genre_id?: number | string,
-	person_id?: number
+	person_id?: number | string
 ): Promise<IDiscoverMovie> => {
 	const res = await axios.get(
 		`discover/movie?api_key=${API_KEY}&language=en-US&${sort}${adultCont}&page=${page}&with_genres=${genre_id}&with_cast=${person_id}`
