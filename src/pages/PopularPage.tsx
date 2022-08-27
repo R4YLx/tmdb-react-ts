@@ -20,8 +20,8 @@ const PopularPage = () => {
 	const { visited }: StoreDataType = useLocalStorage();
 
 	//* Setting current genre
-	let currentGenre = "";
-	const id = "";
+	let currentGenre: string = "";
+	const id: string = "";
 
 	//* Search params
 	const [searchParams, setSearchParams] = useSearchParams({
