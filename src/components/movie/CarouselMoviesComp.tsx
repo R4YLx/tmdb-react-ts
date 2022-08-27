@@ -1,15 +1,26 @@
 import { Link } from "react-router-dom";
+import { useLocalStorage } from "../../contexts/LocalStorageContextProvider";
 import { MovieProp } from "../../interfaces/IMovie";
 import placeholder from "../../assets/movie_placeholder.png";
 
 const CarouselMoviesComp = ({ movies }: MovieProp) => {
+	//* Base url for images
 	const imgUrl = "https://image.tmdb.org/t/p/w500";
+
+	const { storeVisited } = useLocalStorage();
+
 	return (
 		<div className="w-full">
 			<div className="carousel carousel-center p-4 space-x-4 bg-white shadow-inner shadow-zinc-200 rounded-box">
 				{movies &&
 					movies?.map((movie) => (
-						<figure key={movie?.id} className="carousel-item relative">
+						<figure
+							key={movie?.id}
+							className="carousel-item relative"
+							onClick={() => {
+								storeVisited(movie?.title, movie?.id, movie?.poster_path);
+							}}
+						>
 							<Link to={`/movie/${movie?.id}`}>
 								<img
 									src={
