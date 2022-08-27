@@ -1,15 +1,14 @@
-import { useQuery } from "@tanstack/react-query";
 import { useSearchParams } from "react-router-dom";
+import useSearch from "../hooks/useSearch";
+
+import { IMovie } from "../interfaces/IMovie";
+
 import ErrorAlert from "../components/alerts/ErrorAlert";
 import WarningAlert from "../components/alerts/WarningAlert";
 import MovieCard from "../components/movie/MovieCard";
 import LoadingSpinner from "../components/partials/LoadingSpinner";
 import PaginationComp from "../components/partials/PaginationComp";
 import SearchBar from "../components/partials/SearchBar";
-import useSearch from "../hooks/useSearch";
-import { IData } from "../interfaces/IData";
-import { IMovie } from "../interfaces/IMovie";
-import TMDB from "../services/TMDBAPI";
 
 const SearchPage = () => {
 	// Search params
@@ -22,12 +21,7 @@ const SearchPage = () => {
 	const page = searchParams.get("page") ? Number(searchParams.get("page")) : 1;
 
 	// Data
-	const { data, isLoading, isError, error, isSuccess } = useQuery<IData>(
-		["search", page, query],
-		() => TMDB.searchQuery(page, query)
-	);
-
-	console.log(data);
+	const { data, isLoading, isError, error, isSuccess } = useSearch(page, query);
 
 	// Click event to set params
 	const handleSearch = async (query: string) => {
@@ -40,7 +34,7 @@ const SearchPage = () => {
 
 			{/* Section for loading spinner and error handling */}
 			<div className="flex justify-center items-center">
-				{isLoading && <LoadingSpinner />}
+				{isLoading && query !== "" && <LoadingSpinner />}
 
 				{isError && <ErrorAlert error={error} />}
 
@@ -71,9 +65,9 @@ const SearchPage = () => {
 					{/* Content */}
 					<div className="grid grid-cols-1 gap-8 py-4 px-4 md:px-8 justify-items-center md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 2xl:grid-cols-6">
 						{/* Movie cards */}
-						{/* {data.results?.map((movie: IMovie) => (
+						{data.results?.map((movie: IMovie) => (
 							<MovieCard key={movie.id} movie={movie} />
-						))} */}
+						))}
 					</div>
 
 					{/* Pagination */}

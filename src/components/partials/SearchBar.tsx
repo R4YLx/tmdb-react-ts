@@ -5,17 +5,12 @@ type SearchProps = {
 };
 
 const SearchBar = ({ onSearch }: SearchProps) => {
-	const searchInputRef = useRef<HTMLInputElement>();
+	const searchInputRef = useRef<HTMLInputElement>(null);
 
 	const [searchInput, setSearchInput] = useState<string>("");
 
 	const handleSubmit = (e: React.SyntheticEvent) => {
 		e.preventDefault();
-
-		// if (!searchInputRef.current?.value.length) {
-		// 	return;
-		// }
-		// onSearch(searchInputRef.current?.value);
 
 		if (!searchInput.length) {
 			return;
@@ -24,9 +19,9 @@ const SearchBar = ({ onSearch }: SearchProps) => {
 		onSearch(searchInput);
 	};
 
-	// useEffect(() => {
-	// 	searchInputRef.current?.focus();
-	// }, []);
+	useEffect(() => {
+		searchInputRef.current?.focus();
+	}, []);
 
 	return (
 		<>
@@ -34,7 +29,7 @@ const SearchBar = ({ onSearch }: SearchProps) => {
 			<div className="flex justify-center pt-8">
 				<form className="flex items-center gap-4" onSubmit={handleSubmit}>
 					<input
-						// ref={searchInputRef}
+						ref={searchInputRef}
 						value={searchInput}
 						onChange={(e) => setSearchInput(e.target.value)}
 						required

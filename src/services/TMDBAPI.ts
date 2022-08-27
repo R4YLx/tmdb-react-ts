@@ -133,10 +133,8 @@ export const getUpcomingMovies = async (): Promise<IMovie[]> => {
  */
 const searchQuery = async (
 	page: number | string,
-	query: string
+	query: string | undefined
 ): Promise<IData> => {
-	// if (!!query) return;
-
 	const res = await axios.get(
 		`search/movie?api_key=${API_KEY}&query=${query}&page=${page}${adultCont}`
 	);
