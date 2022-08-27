@@ -2,7 +2,7 @@ import { createContext, useContext, useEffect, useState } from "react";
 import { IMovie } from "../interfaces/IMovie";
 import { LocalStorageProviderProps, StoreDataType } from "./types";
 
-const LocalStorageContext = createContext<StoreDataType | null>(null);
+const LocalStorageContext = createContext<StoreDataType | any>(null);
 
 // Custom hook of context to minimize code
 export const useLocalStorage = () => {
