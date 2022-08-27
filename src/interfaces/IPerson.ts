@@ -15,8 +15,8 @@ export interface IPerson {
 	profile_path?: string;
 }
 
-export type PersonProp = {
-	cast?: IPerson[];
-	person?: IPerson;
-	people?: IPerson[];
-};
+// export type PersonProp = {
+// 	cast?: IPerson[];
+// 	person?: IPerson;
+// 	people?: IPerson[];
+// };

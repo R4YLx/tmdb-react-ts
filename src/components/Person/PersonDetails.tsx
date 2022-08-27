@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
-import { PersonProp } from "../../interfaces/IPerson";
+import { IPerson } from "../../interfaces/IPerson";
 
 import { Card } from "flowbite-react";
 import ButtonComp from "../partials/ButtonComp";
@@ -8,7 +8,7 @@ import PersonMovieList from "./PersonMovieList";
 
 import placeholder from "../../assets/person_placeholder.png";
 
-const PersonDetails = ({ person }: PersonProp) => {
+const PersonDetails = ({ person }: { person: IPerson }) => {
 	// image URL
 	const imgUrl = "https://image.tmdb.org/t/p/original";
 

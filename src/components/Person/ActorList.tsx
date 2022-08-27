@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom";
-import { IPerson, PersonProp } from "../../interfaces/IPerson";
+import { IPerson } from "../../interfaces/IPerson";
 import placeholder from "../../assets/person_placeholder.png";
+
+type PersonProp = {
+	cast?: IPerson[];
+};
 
 const ActorList = ({ cast }: PersonProp) => {
 	const imgUrl = "https://image.tmdb.org/t/p/w185";
