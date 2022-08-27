@@ -1,6 +1,9 @@
+import { useLocalStorage } from "../../contexts/LocalStorageContextProvider";
 import CarouselMoviesComp from "./CarouselMoviesComp";
 
 const RecentlyVisitedMovies = () => {
+	const { visited } = useLocalStorage();
+
 	return (
 		<>
 			{/* Divider */}
@@ -12,7 +15,7 @@ const RecentlyVisitedMovies = () => {
 				Recently Viewed Movies
 			</h5>
 			<div className="pb-8">
-				<CarouselMoviesComp /* movies={visited} */ />
+				<CarouselMoviesComp movies={visited} />
 			</div>
 		</>
 	);
