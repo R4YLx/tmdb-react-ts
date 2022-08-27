@@ -1,6 +1,6 @@
 import { useSearchParams } from "react-router-dom";
 import useSearch from "../hooks/useSearch";
-
+import { useLocalStorage } from "../contexts/LocalStorageContextProvider";
 import { IMovie } from "../interfaces/IMovie";
 
 import ErrorAlert from "../components/alerts/ErrorAlert";
@@ -9,27 +9,31 @@ import MovieCard from "../components/movie/MovieCard";
 import LoadingSpinner from "../components/partials/LoadingSpinner";
 import PaginationComp from "../components/partials/PaginationComp";
 import SearchBar from "../components/partials/SearchBar";
+import RecentlyVisitedMovies from "../components/movie/RecentlyVisitedMovies";
 
 const SearchPage = () => {
-	// Search params
+	//* Hook for getting local storage
+	const { visited } = useLocalStorage();
+
+	//* Search params
 	const [searchParams, setSearchParams] = useSearchParams({
 		page: "1",
 	});
 
-	// Keeping track of search query and page
+	//* Keeping track of search query and page
 	const query = searchParams.get("query") ?? "";
 	const page = searchParams.get("page") ? Number(searchParams.get("page")) : 1;
 
-	// Data
+	//* Data
 	const { data, isLoading, isError, error, isSuccess } = useSearch(page, query);
 
-	// Click event to set params
+	//* Click event to set params
 	const handleSearch = async (query: string) => {
 		setSearchParams({ page: "1", query });
 	};
 
 	return (
-		<div className="min-h-screen">
+		<div className="min-h-screen grid">
 			<SearchBar onSearch={handleSearch} />
 
 			{/* Section for loading spinner and error handling */}
@@ -45,7 +49,7 @@ const SearchPage = () => {
 			{isSuccess && data?.total_results !== 0 && (
 				<>
 					{/* Container for top title and pagination */}
-					<div className="grid md:grid-cols-3">
+					<div className="grid md:grid-cols-3 h-full">
 						{/* Title */}
 						<h2 className="font-semibold text-xl pt-4 px-4 md:pt-0 md:text-2xl text-white self-center md:px-8">
 							Found {`${data?.total_results} results of "${query}"`}
@@ -80,6 +84,14 @@ const SearchPage = () => {
 						/>
 					</div>
 				</>
+			)}
+
+			{/* Recently viewed movies */}
+
+			{visited.length > 0 && (
+				<div className="self-end px-4 md:px-8">
+					<RecentlyVisitedMovies />
+				</div>
 			)}
 		</div>
 	);

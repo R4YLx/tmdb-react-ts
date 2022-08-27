@@ -27,7 +27,7 @@ const SearchBar = ({ onSearch }: SearchProps) => {
 		<>
 			{/* Search bar for resources */}
 			<div className="flex justify-center pt-8">
-				<form className="flex items-center gap-4" onSubmit={handleSubmit}>
+				<form className="flex gap-4" onSubmit={handleSubmit}>
 					<input
 						ref={searchInputRef}
 						value={searchInput}
