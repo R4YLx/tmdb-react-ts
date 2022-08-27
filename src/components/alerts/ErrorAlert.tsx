@@ -1,7 +1,7 @@
 const ErrorAlert = ({ error }: { error: any }) => {
 	return (
-		<div className="py-16 w-4/5">
-			<div className="alert alert-error shadow-lg">
+		<div className="py-16">
+			<div className="alert alert-error shadow-lg flex justify-center">
 				<div>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"

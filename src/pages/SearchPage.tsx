@@ -34,15 +34,28 @@ const SearchPage = () => {
 
 	return (
 		<div className="min-h-screen grid">
-			<SearchBar onSearch={handleSearch} />
+			<div className="flex-col justify-center justify-items-center">
+				{/* Search bar */}
+				<SearchBar onSearch={handleSearch} />
 
-			{/* Section for loading spinner and error handling */}
-			<div className="flex justify-center items-center">
-				{isLoading && query !== "" && <LoadingSpinner />}
+				{/* Section for loading spinner and error handling */}
+				{isLoading && query !== "" && (
+					<div className="flex justify-center">
+						<LoadingSpinner />
+					</div>
+				)}
 
-				{isError && <ErrorAlert error={error} />}
+				{isError && (
+					<div className="flex justify-center">
+						<ErrorAlert error={error} />
+					</div>
+				)}
 
-				{data?.total_results === 0 && <WarningAlert query={query} />}
+				{data?.total_results === 0 && (
+					<div className="flex justify-center">
+						<WarningAlert query={query} />
+					</div>
+				)}
 			</div>
 
 			{/* Content */}
