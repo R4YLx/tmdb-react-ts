@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import logo from "../../assets/logo.png";
 
 const Navigation = () => {
+	//* Find location
 	const location = useLocation();
 
 	return (

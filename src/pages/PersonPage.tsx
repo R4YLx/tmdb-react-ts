@@ -14,6 +14,7 @@ const PersonPage = () => {
 	//* Id param
 	const { id } = useParams();
 
+	//* Data
 	const { data: person, isLoading, isSuccess, isError, error } = usePerson(id);
 
 	return (

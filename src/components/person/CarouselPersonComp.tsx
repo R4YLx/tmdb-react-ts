@@ -3,6 +3,7 @@ import { IPerson, PersonProp } from "../../interfaces/IPerson";
 import placeholder from "../../assets/person_placeholder.png";
 
 const CarouselPersonComp = ({ people }: PersonProp) => {
+	//* Base URL for images
 	const imgUrl = "https://image.tmdb.org/t/p/w500";
 
 	return (

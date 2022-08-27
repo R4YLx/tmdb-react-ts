@@ -5,10 +5,13 @@ type SearchProps = {
 };
 
 const SearchBar = ({ onSearch }: SearchProps) => {
+	//* focuses on search form
 	const searchInputRef = useRef<HTMLInputElement>(null);
 
+	//* Search input
 	const [searchInput, setSearchInput] = useState<string>("");
 
+	//* Handling submit button
 	const handleSubmit = (e: React.SyntheticEvent) => {
 		e.preventDefault();
 
@@ -19,6 +22,7 @@ const SearchBar = ({ onSearch }: SearchProps) => {
 		onSearch(searchInput);
 	};
 
+	//* focuses on search form
 	useEffect(() => {
 		searchInputRef.current?.focus();
 	}, []);

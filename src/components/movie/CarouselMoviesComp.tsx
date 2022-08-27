@@ -7,6 +7,7 @@ const CarouselMoviesComp = ({ movies }: MovieProp) => {
 	//* Base url for images
 	const imgUrl = "https://image.tmdb.org/t/p/w500";
 
+	//* Custom hook for setting movie to local storage
 	const { storeVisited } = useLocalStorage();
 
 	return (

@@ -7,13 +7,16 @@ import { IMovie } from "../../interfaces/IMovie";
 import placeholder from "../../assets/movie_placeholder.png";
 
 const PersonMovieList = ({ id }: { id?: number }) => {
-	// image URL
+	//* Base URL for images
 	const imgUrl = "https://image.tmdb.org/t/p/w500/";
 
+	//* default for genre id
 	const genre_id = "";
 
+	//* page number for actor's movies
 	const [page, setPage] = useState<number>(1);
 
+	//* Data
 	const { data: relatedMovies, isSuccess } = useDiscoverMovies(
 		"sort_by=release_date.desc",
 		page,

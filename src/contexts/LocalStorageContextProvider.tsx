@@ -4,11 +4,12 @@ import { LocalStorageProviderProps, StoreDataType } from "./types";
 
 const LocalStorageContext = createContext<StoreDataType | any>(null);
 
-// Custom hook of context to minimize code
+//* Custom hook of context to minimize code
 export const useLocalStorage = () => {
 	return useContext(LocalStorageContext);
 };
 
+//* Context Provider
 const LocalStorageContextProvider = ({
 	children,
 }: LocalStorageProviderProps) => {

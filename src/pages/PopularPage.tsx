@@ -52,7 +52,7 @@ const PopularPage = () => {
 		});
 	};
 
-	//* looping to render current genre
+	//* Looping to render current genre
 	genresData?.find((genre: IGenres) => {
 		if (genre.id === Number(genre_id)) {
 			currentGenre = `- ${genre.name}`;

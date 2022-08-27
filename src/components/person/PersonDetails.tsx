@@ -9,12 +9,13 @@ import PersonMovieList from "./PersonMovieList";
 import placeholder from "../../assets/person_placeholder.png";
 
 const PersonDetails = ({ person }: PersonProp) => {
-	// image URL
+	//* Base URL for images
 	const imgUrl = "https://image.tmdb.org/t/p/original";
 
+	//* navigation
 	const navigate = useNavigate();
 
-	// Handle previous page
+	//* Handle previous page
 	const onPrevious = () => {
 		navigate(-1);
 	};

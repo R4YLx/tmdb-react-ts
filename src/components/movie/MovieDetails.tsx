@@ -10,12 +10,13 @@ import ButtonComp from "../partials/ButtonComp";
 import placeholder from "../../assets/movie_placeholder.png";
 
 const MovieDetails = ({ movie }: MovieProp) => {
-	// image URL
+	//* image URL
 	const imgUrl = "https://image.tmdb.org/t/p/original/";
 
+	//* Navigation
 	const navigate = useNavigate();
 
-	// Handle previous page
+	//* Handle previous page
 	const onPrevious = () => {
 		navigate(-1);
 	};

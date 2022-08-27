@@ -2,6 +2,7 @@ import { useLocalStorage } from "../../contexts/LocalStorageContextProvider";
 import CarouselMoviesComp from "./CarouselMoviesComp";
 
 const RecentlyVisitedMovies = () => {
+	//* Custom hook for getting movies in local storage
 	const { visited } = useLocalStorage();
 
 	return (
