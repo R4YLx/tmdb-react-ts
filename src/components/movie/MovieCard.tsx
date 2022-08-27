@@ -1,13 +1,18 @@
 import { Link } from "react-router-dom";
 import { Button, Card } from "flowbite-react";
 
+import { useLocalStorage } from "../../contexts/LocalStorageContextProvider";
 import { MovieProp } from "../../interfaces/IMovie";
 
 import placeholder from "../../assets/movie_placeholder.png";
 import VotesAndRating from "../partials/VotesAndRating";
 
 const MovieCard = ({ movie }: MovieProp) => {
+	//* Base url for images
 	const imgUrl = "https://image.tmdb.org/t/p/w500";
+
+	//* Hook for setting to local storage
+	const { storeVisited } = useLocalStorage();
 
 	return (
 		<Card
@@ -39,7 +44,12 @@ const MovieCard = ({ movie }: MovieProp) => {
 
 				{/* Button for more info */}
 				<Link to={`/movie/${movie?.id}`} className="mt-auto">
-					<Button gradientDuoTone="purpleToBlue">
+					<Button
+						gradientDuoTone="purpleToBlue"
+						onClick={() => {
+							storeVisited(movie?.title, movie?.id, movie?.poster_path);
+						}}
+					>
 						<p className="hover:text-pink-400 text-base">Read more</p>
 					</Button>
 				</Link>
