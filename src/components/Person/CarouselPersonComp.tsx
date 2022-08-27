@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import { IPerson } from "../../interfaces/IPerson";
+import { IPerson, PersonProp } from "../../interfaces/IPerson";
 import placeholder from "../../assets/person_placeholder.png";
 
-const CarouselPersonComp = ({ people }: { people: IPerson[] }) => {
+const CarouselPersonComp = ({ people }: PersonProp) => {
 	const imgUrl = "https://image.tmdb.org/t/p/w500";
 
 	return (
