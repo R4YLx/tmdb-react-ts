@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
 import { useLocalStorage } from "../../contexts/LocalStorageContextProvider";
 import { StoreDataType } from "../../contexts/types";
-import { MovieProp } from "../../interfaces/IMovie";
+import { IMovie, MovieProp } from "../../interfaces/IMovie";
 import placeholder from "../../assets/movie_placeholder.png";
 
 const CarouselMoviesComp = ({ movies }: MovieProp) => {
 	//* Base url for images
-	const imgUrl = "https://image.tmdb.org/t/p/w500";
+	const imgUrl: string = "https://image.tmdb.org/t/p/w500";
 
 	//* Custom hook for setting movie to local storage
 	const { storeVisited }: StoreDataType = useLocalStorage();
@@ -15,7 +15,7 @@ const CarouselMoviesComp = ({ movies }: MovieProp) => {
 		<div className="w-full">
 			<div className="carousel carousel-center p-4 space-x-4 bg-white shadow-inner shadow-zinc-200 rounded-box">
 				{movies &&
-					movies?.map((movie) => (
+					movies?.map((movie: IMovie) => (
 						<figure
 							key={movie?.id}
 							className="carousel-item relative"

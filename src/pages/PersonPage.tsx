@@ -8,12 +8,16 @@ import LoadingSpinner from "../components/partials/LoadingSpinner";
 import PersonDetails from "../components/person/PersonDetails";
 import RecentlyVisitedMovies from "../components/movie/RecentlyVisitedMovies";
 
+type IdParams = {
+	id: string;
+};
+
 const PersonPage = () => {
 	//* Hook for getting local storage
 	const { visited }: StoreDataType = useLocalStorage();
 
 	//* Id param
-	const { id } = useParams();
+	const { id } = useParams<IdParams>();
 
 	//* Data
 	const { data: person, isLoading, isSuccess, isError, error } = usePerson(id);

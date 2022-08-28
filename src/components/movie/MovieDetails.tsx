@@ -11,7 +11,7 @@ import placeholder from "../../assets/movie_placeholder.png";
 
 const MovieDetails = ({ movie }: MovieProp) => {
 	//* image URL
-	const imgUrl = "https://image.tmdb.org/t/p/original/";
+	const imgUrl: string = "https://image.tmdb.org/t/p/original/";
 
 	//* Navigation
 	const navigate = useNavigate();

@@ -10,7 +10,7 @@ import placeholder from "../../assets/person_placeholder.png";
 
 const PersonDetails = ({ person }: PersonProp) => {
 	//* Base URL for images
-	const imgUrl = "https://image.tmdb.org/t/p/original";
+	const imgUrl: string = "https://image.tmdb.org/t/p/original";
 
 	//* navigation
 	const navigate = useNavigate();

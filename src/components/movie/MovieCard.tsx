@@ -10,7 +10,7 @@ import VotesAndRating from "../partials/VotesAndRating";
 
 const MovieCard = ({ movie }: MovieProp) => {
 	//* Base url for images
-	const imgUrl = "https://image.tmdb.org/t/p/w500";
+	const imgUrl: string = "https://image.tmdb.org/t/p/w500";
 
 	//* Hook for setting to local storage
 	const { storeVisited }: StoreDataType = useLocalStorage();

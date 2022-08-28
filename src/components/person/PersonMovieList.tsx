@@ -8,10 +8,10 @@ import placeholder from "../../assets/movie_placeholder.png";
 
 const PersonMovieList = ({ id }: { id?: number }) => {
 	//* Base URL for images
-	const imgUrl = "https://image.tmdb.org/t/p/w500/";
+	const imgUrl: string = "https://image.tmdb.org/t/p/w500/";
 
 	//* default for genre id
-	const genre_id = "";
+	const genre_id: string = "";
 
 	//* page number for actor's movies
 	const [page, setPage] = useState<number>(1);

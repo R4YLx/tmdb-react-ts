@@ -4,7 +4,7 @@ import placeholder from "../../assets/person_placeholder.png";
 
 const CarouselPersonComp = ({ people }: PersonProp) => {
 	//* Base URL for images
-	const imgUrl = "https://image.tmdb.org/t/p/w500";
+	const imgUrl: string = "https://image.tmdb.org/t/p/w500";
 
 	return (
 		<div className="w-full">

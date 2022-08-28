@@ -9,9 +9,13 @@ import LoadingSpinner from "../components/partials/LoadingSpinner";
 import CarouselMoviesComp from "../components/movie/CarouselMoviesComp";
 import RecentlyVisitedMovies from "../components/movie/RecentlyVisitedMovies";
 
+type IdParams = {
+	id: string;
+};
+
 const MoviePage = () => {
 	//* Getting id
-	const { id }: { id?: string } = useParams();
+	const { id } = useParams<IdParams>();
 
 	//* Hook for getting local storage
 	const { visited }: StoreDataType = useLocalStorage();
