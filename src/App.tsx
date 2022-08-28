@@ -1,4 +1,5 @@
 import "./css/App.css";
+import React from "react";
 import { Route, Routes } from "react-router-dom";
 
 import Navigation from "./components/partials/Navigation";
@@ -12,7 +13,7 @@ import SearchPage from "./pages/SearchPage";
 import PageNotFound from "./pages/PageNotFound";
 import FooterComp from "./components/partials/FooterComp";
 
-function App() {
+const App: React.FC = () => {
 	return (
 		<div className="App bg-gradient-to-b from-slate-900 to-indigo-900 min-h-screen h-full grid grid-row-3 relative">
 			<Navigation />
@@ -32,6 +33,6 @@ function App() {
 			<FooterComp className="row-end-3" />
 		</div>
 	);
-}
+};
 
 export default App;

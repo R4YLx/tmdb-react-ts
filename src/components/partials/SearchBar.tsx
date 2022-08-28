@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 
 type SearchProps = {
-	onSearch: any; //* setSearchParams
+	onSearch: (query: string) => void;
 };
 
 const SearchBar = ({ onSearch }: SearchProps) => {
