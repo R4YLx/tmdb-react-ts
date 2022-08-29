@@ -61,8 +61,8 @@ User should be able to see:
 - VS Code
 - Vite
 - React
-- Axios
 - React Router
+- Axios
 - Tanstack Query
 - React Loader Spinner
 - Tailwind CSS
@@ -74,7 +74,7 @@ User should be able to see:
 To run the app you have to:
 
 1. Add an .env file containing:
-   "VITE*API_KEY={\_your API key*}"
+   "VITE_API_KEY={your API key}"
 
 2. Open terminal and run:
 
