@@ -44,10 +44,7 @@ const FooterComp: React.FC<ClassNames> = () => {
 
 				{/* Github and socials section */}
 				<div className="hidden md:grid md:grid-flow-col md:gap-2 md:pb-2 md:self-center md:col-start-3 md:justify-self-end">
-					<a
-						target="_blank"
-						href="https://github.com/R4YLx/tmdb-movie-database"
-					>
+					<a target="_blank" href="https://github.com/R4YLx/tmdb-react-ts">
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
 							width="24"
