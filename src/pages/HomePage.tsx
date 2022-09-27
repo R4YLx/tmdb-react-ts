@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 
 import usePopularPeople from "../hooks/usePopularPeople";
 import useTrending from "../hooks/useTrending";
@@ -19,7 +19,8 @@ const HomePage = () => {
 	const { visited }: StoreDataType = useLocalStorage();
 
 	//* State for api time window
-	const [time, setTime] = useState<string>("week");
+	const [searchParams, setSearchParams] = useSearchParams({ time: "week" });
+	const time = String(searchParams.get("time"));
 
 	//* Data via useQuery
 	const { data: trending, isSuccess: trendingSuccess } = useTrending(time);
@@ -78,14 +79,14 @@ const HomePage = () => {
 						>
 							<DropdownItem
 								onClick={() => {
-									setTime("day");
+									setSearchParams({ time: "day" });
 								}}
 							>
 								<span className="text-sm">day</span>
 							</DropdownItem>
 							<DropdownItem
 								onClick={() => {
-									setTime("week");
+									setSearchParams({ time: "week" });
 								}}
 							>
 								<span className="text-sm">week</span>
