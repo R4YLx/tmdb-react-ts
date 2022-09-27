@@ -4,10 +4,10 @@ import { StoreDataType } from "../../contexts/types";
 import { IMovie, MovieProp } from "../../interfaces/IMovie";
 import placeholder from "../../assets/movie_placeholder.png";
 
-const CarouselMoviesComp = ({ movies }: MovieProp) => {
-	//* Base url for images
-	const imgUrl: string = "https://image.tmdb.org/t/p/w500";
+//* Base url for images
+const imgUrl: string = "https://image.tmdb.org/t/p/w500";
 
+const CarouselMoviesComp = ({ movies }: MovieProp) => {
 	//* Custom hook for setting movie to local storage
 	const { storeVisited }: StoreDataType = useLocalStorage();
 

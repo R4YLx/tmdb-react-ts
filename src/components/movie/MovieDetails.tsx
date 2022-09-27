@@ -9,10 +9,10 @@ import ButtonComp from "../partials/ButtonComp";
 
 import placeholder from "../../assets/movie_placeholder.png";
 
-const MovieDetails = ({ movie }: MovieProp) => {
-	//* image URL
-	const imgUrl: string = "https://image.tmdb.org/t/p/original/";
+//* image URL
+const imgUrl: string = "https://image.tmdb.org/t/p/original/";
 
+const MovieDetails = ({ movie }: MovieProp) => {
 	//* Navigation
 	const navigate = useNavigate();
 

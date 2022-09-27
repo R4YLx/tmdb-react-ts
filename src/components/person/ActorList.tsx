@@ -2,10 +2,10 @@ import { Link } from "react-router-dom";
 import { IPerson, PersonProp } from "../../interfaces/IPerson";
 import placeholder from "../../assets/person_placeholder.png";
 
-const ActorList = ({ cast }: PersonProp) => {
-	//* Base URL for images
-	const imgUrl: string = "https://image.tmdb.org/t/p/w185";
+//* Base URL for images
+const imgUrl: string = "https://image.tmdb.org/t/p/w185";
 
+const ActorList = ({ cast }: PersonProp) => {
 	return (
 		<>
 			<table className="border-separate p-4 bg-gray-900 bg-opacity-70 rounded-md">

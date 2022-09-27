@@ -8,10 +8,10 @@ import PersonMovieList from "./PersonMovieList";
 
 import placeholder from "../../assets/person_placeholder.png";
 
-const PersonDetails = ({ person }: PersonProp) => {
-	//* Base URL for images
-	const imgUrl: string = "https://image.tmdb.org/t/p/original";
+//* Base URL for images
+const imgUrl: string = "https://image.tmdb.org/t/p/original";
 
+const PersonDetails = ({ person }: PersonProp) => {
 	//* navigation
 	const navigate = useNavigate();
 

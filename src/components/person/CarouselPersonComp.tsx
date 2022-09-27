@@ -2,10 +2,10 @@ import { Link } from "react-router-dom";
 import { IPerson, PersonProp } from "../../interfaces/IPerson";
 import placeholder from "../../assets/person_placeholder.png";
 
-const CarouselPersonComp = ({ people }: PersonProp) => {
-	//* Base URL for images
-	const imgUrl: string = "https://image.tmdb.org/t/p/w500";
+//* Base URL for images
+const imgUrl: string = "https://image.tmdb.org/t/p/w500";
 
+const CarouselPersonComp = ({ people }: PersonProp) => {
 	return (
 		<div className="w-full">
 			<div className="carousel carousel-center p-4 space-x-4 bg-white shadow-inner shadow-zinc-200 rounded-box">

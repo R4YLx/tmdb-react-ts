@@ -8,10 +8,10 @@ import { StoreDataType } from "../../contexts/types";
 import placeholder from "../../assets/movie_placeholder.png";
 import VotesAndRating from "../partials/VotesAndRating";
 
-const MovieCard = ({ movie }: MovieProp) => {
-	//* Base url for images
-	const imgUrl: string = "https://image.tmdb.org/t/p/w500";
+//* Base url for images
+const imgUrl: string = "https://image.tmdb.org/t/p/w500";
 
+const MovieCard = ({ movie }: MovieProp) => {
 	//* Hook for setting to local storage
 	const { storeVisited }: StoreDataType = useLocalStorage();
 
