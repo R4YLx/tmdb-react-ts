@@ -1,5 +1,5 @@
 import { Navbar } from "flowbite-react";
-import { useLocation } from "react-router-dom";
+import { useLocation, NavLink } from "react-router-dom";
 import logo from "../../assets/logo.png";
 
 const Navigation = () => {
@@ -8,17 +8,19 @@ const Navigation = () => {
 
 	return (
 		<Navbar fluid={true} rounded={false}>
-			<Navbar.Brand href="/">
-				{/* Logo */}
-				<img src={logo} className="mr-3 w-10 md:w-12" alt="Movie Time Logo" />
+			<Navbar.Brand>
+				<NavLink to={"/"}>
+					{/* Logo */}
+					<img src={logo} className="mr-3 w-10 md:w-12" alt="Movie Time Logo" />
 
-				{/* App name  */}
-				<span className="self-center whitespace-nowrap text-lg font-bold text-indigo-900">
-					Popcorn Time
-					<p className="text-xs text-indigo-900 text-opacity-60">
-						Let’s go to the movies!
-					</p>
-				</span>
+					{/* App name  */}
+					<span className="self-center whitespace-nowrap text-lg font-bold text-indigo-900">
+						Popcorn Time
+						<p className="text-xs text-indigo-900 text-opacity-60">
+							Let’s go to the movies!
+						</p>
+					</span>
+				</NavLink>
 			</Navbar.Brand>
 
 			<Navbar.Toggle />
