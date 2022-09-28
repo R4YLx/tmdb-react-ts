@@ -1,58 +1,49 @@
 import { Navbar } from "flowbite-react";
-import { useLocation, NavLink } from "react-router-dom";
+import { NavLink, NavbarBrand } from "./navigation-components/CustomNavLinks";
 import logo from "../../assets/logo.png";
 
 const Navigation = () => {
-	//* Find location
-	const location = useLocation();
-
 	return (
 		<Navbar fluid={true} rounded={false}>
-			<Navbar.Brand>
-				<NavLink to={"/"}>
-					{/* Logo */}
-					<img src={logo} className="mr-3 w-10 md:w-12" alt="Movie Time Logo" />
+			<NavbarBrand to="/">
+				{/* Logo */}
+				<img src={logo} className="mr-3 w-10 md:w-12" alt="Movie Time Logo" />
 
-					{/* App name  */}
-					<span className="self-center whitespace-nowrap text-lg font-bold text-indigo-900">
-						Popcorn Time
-						<p className="text-xs text-indigo-900 text-opacity-60">
-							Let’s go to the movies!
-						</p>
-					</span>
-				</NavLink>
-			</Navbar.Brand>
+				{/* App name  */}
+				<span className="self-center whitespace-nowrap text-lg font-bold text-indigo-900">
+					Popcorn Time
+					<p className="text-xs text-indigo-900 text-opacity-60">
+						Let’s go to the movies!
+					</p>
+				</span>
+			</NavbarBrand>
 
 			<Navbar.Toggle />
 
 			<Navbar.Collapse>
 				{/* Home */}
-				<Navbar.Link href="/" active={location.pathname === "/"}>
+				<NavLink to="/">
 					<span className="text-base">Home</span>
-				</Navbar.Link>
+				</NavLink>
 
 				{/* Playing */}
-				<Navbar.Link
-					href="/now-playing"
-					active={location.pathname === "/now-playing"}
-				>
+				<NavLink to="/now-playing">
 					<span className="text-base">Now Playing</span>
-				</Navbar.Link>
+				</NavLink>
 
 				{/* Popular */}
-				<Navbar.Link href="/popular" active={location.pathname === "/popular"}>
+				<NavLink to="/popular">
 					<span className="text-base">Popular Movies</span>
-				</Navbar.Link>
+				</NavLink>
 
 				{/* Top Rated */}
-				<Navbar.Link
-					href="/top-rated"
-					active={location.pathname === "/top-rated"}
-				>
+
+				<NavLink to="top-rated">
 					<span className="text-base">Top Rated Movies</span>
-				</Navbar.Link>
+				</NavLink>
+
 				{/* Playing */}
-				<Navbar.Link href="/search" active={location.pathname === "/search"}>
+				<NavLink to="/search">
 					<span className="text-base flex items-center gap-1">
 						Search
 						<div>
@@ -67,7 +58,7 @@ const Navigation = () => {
 							</svg>
 						</div>
 					</span>
-				</Navbar.Link>
+				</NavLink>
 			</Navbar.Collapse>
 		</Navbar>
 	);
