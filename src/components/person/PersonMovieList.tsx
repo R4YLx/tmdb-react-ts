@@ -4,6 +4,9 @@ import { Link } from "react-router-dom";
 import useDiscoverMovies from "../../hooks/useDiscoverMovies";
 import { IMovie } from "../../interfaces/IMovie";
 
+import { useLocalStorage } from "../../contexts/LocalStorageContextProvider";
+import { StoreDataType } from "../../contexts/types";
+
 import placeholder from "../../assets/movie_placeholder.png";
 
 //* Base URL for images
@@ -23,6 +26,9 @@ const PersonMovieList = ({ id }: { id?: number }) => {
 		genre_id,
 		id
 	);
+
+	//* Hook for setting to local storage
+	const { storeVisited }: StoreDataType = useLocalStorage();
 
 	return (
 		<>
@@ -55,9 +61,9 @@ const PersonMovieList = ({ id }: { id?: number }) => {
 								<p className="font-bold text-sm hover:underline">
 									<Link
 										to={`/movie/${movie.id}`}
-										// onClick={() => {
-										// 	storeVisited(movie?.title, movie?.id, movie?.poster_path);
-										// }}
+										onClick={() => {
+											storeVisited(movie?.title, movie?.id, movie?.poster_path);
+										}}
 									>
 										{movie.title}{" "}
 									</Link>
