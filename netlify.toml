@@ -1,5 +1,5 @@
 [[redirects]]
   from = "/*"
-  to = "https://popcorntime.app"
+  to = "https://popcorntime.app:splat"
   status = 308
   force = true
