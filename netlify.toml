@@ -1,11 +1,5 @@
 [[redirects]]
-  from = "https://tmdb-popcorn-time.netlify.app/"
-  to = "https://popcorntime.app/"
+  from = "/*"
+  to = "https://popcorntime.app"
   status = 308
   force = true
-
-[[redirects]]
-  from = "/*"
-  to = "https://popcorntime.app/:splat"
-  status = 200
-
